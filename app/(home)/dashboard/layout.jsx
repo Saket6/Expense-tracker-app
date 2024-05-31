@@ -22,7 +22,7 @@ function Layout({ children }) {
             <>
                 <Navbar isOpen={isNavbar} />
                 {/* <div className='p-7 flex justify-end lg:hidden z-10 bg-gray-900 w-full  sticky top-0 right-0 '> */}
-                    <div className='fixed top-5 right-5 p-2 md:p-0 bg-gray-700 rounded-lg z-10 hover:bg-gray-600'>
+                    <div className=' z-50 fixed top-5 right-5 p-2 md:p-0 bg-gray-700 rounded-lg  hover:bg-gray-600'>
                         <Menu className=' lg:hidden block z-30' size="30px" onClick={() => setNavbar(!isNavbar)} />
                     </div>
                 {/* </div> */}

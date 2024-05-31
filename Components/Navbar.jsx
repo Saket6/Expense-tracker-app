@@ -71,7 +71,7 @@ function Navbar({isOpen}) {
       };
 
     return (
-        <div className={`z-50 fixed ${isOpen?"":'hidden'} left-slide  bg-opacity-95 transition-all duration-150  top-0 left-0 p-4 lg:p-0  min-h-screen  w-64  bg-gray-800 lg:bg-transparent lg:h-100% md:h-auto   lg:sticky py-4 lg:w-full lg:col-span-2  lg:block  `}>
+        <div className={`z-50 absolute min-h-screen max-w-72 top-0 left-0  ${isOpen?"":'hidden'} left-slide  bg-opacity-95 transition-all duration-150   p-4 lg:p-0   w-full  bg-gray-800 lg:bg-transparent lg:h-100% md:h-auto   lg:sticky py-4 lg:w-full lg:col-span-2  lg:block  `}>
             <div className="user flex flex-col justify-center items-center ">
                
                {
