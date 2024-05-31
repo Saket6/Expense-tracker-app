@@ -77,7 +77,7 @@
 
   .left-slide{
     animation-name: slide;
-    animation-duration: 0.7s;
+    animation-duration: 0.4s;
     animation-fill-mode: forwards;
   }
 

@@ -101,7 +101,7 @@ function Navbar({isOpen}) {
 
         {
             isOpen?(
-                <div className="z-50 fixed lg:hidden top-0 left-0 max-w-64 min-h-screen  left-slide  bg-opacity-95 transition-all duration-150   p-4  bg-gray-800 md:h-auto  py-4 ">
+                <div className="z-50 fixed lg:hidden top-0 left-0 min-w-72 min-h-screen  left-slide  bg-opacity-95 transition-all duration-150   p-4  bg-gray-800 md:h-auto  py-4 ">
                 <div className="user flex flex-col justify-center items-center ">
                    
                    {
