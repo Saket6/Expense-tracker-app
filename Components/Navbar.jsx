@@ -71,7 +71,8 @@ function Navbar({isOpen}) {
       };
 
     return (
-        <div className={`z-50 absolute top-0 left-0 max-w-64 min-h-screen     ${isOpen?"":'hidden'} left-slide  bg-opacity-95 transition-all duration-150   p-4 lg:p-0   w-full  bg-gray-800 lg:bg-transparent lg:h-100% md:h-auto   lg:sticky py-4 lg:w-full lg:col-span-2  lg:block  `}>
+        <>
+         <div className={`z-50 absolute lg:static top-0 left-0 max-w-64 min-h-screen hidden lg:block left-slide  bg-opacity-95 transition-all duration-150   p-4 lg:p-0   w-full  bg-gray-800 lg:bg-transparent lg:h-100% md:h-auto  py-4 lg:w-full lg:col-span-2  `}>
             <div className="user flex flex-col justify-center items-center ">
                
                {
@@ -97,6 +98,39 @@ function Navbar({isOpen}) {
                 </ul>
             </nav>
         </div>
+
+        {
+            isOpen?(
+                <div className={`z-50 fixed lg:hidden top-0 left-0 max-w-64 min-h-screen  left-slide  bg-opacity-95 transition-all duration-150   p-4  bg-gray-800 md:h-auto  py-4  `}>
+                <div className="user flex flex-col justify-center items-center ">
+                   
+                   {
+                    user?<UserButton afterSignOutUrl='/sign-in' appearance={userButtonAppearance} />: 
+                    <div className='p-10 rounded-full bg-gray-700 animate-pulse'>
+    
+                    </div>
+    
+                   }
+            
+                    {/* <ThemeChanger appearance={userButtonAppearance}/> */}
+                </div>
+                <nav className='mt-4'>
+                    <ul>
+                        {NavItems.map((item, index) => (
+                            <li key={index} className='w-full'>
+                                <Link href={item.link} className={`flex px-2 py-3 ${path === (item.link) && `bg-gray-700`} transition-all duration-100  rounded-lg mb-2 hover:bg-gray-700`}>
+                                    <span className='mr-3'>{item.icon}</span>
+                                    <span className='mr-3'>{item.name}</span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
+            ):""
+        }
+        </>
+       
     )
 }
 
