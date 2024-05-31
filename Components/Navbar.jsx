@@ -72,7 +72,7 @@ function Navbar({isOpen}) {
 
     return (
         <>
-         <div className={`z-50 hidden md:flex md:flex-col  min-h-screen left-slide  bg-opacity-95 transition-all duration-150   p-4 lg:p-0   w-full  bg-gray-800 lg:bg-transparent lg:h-100% md:h-auto  py-4 lg:w-full lg:col-span-2  `}>
+         <div className="z-50 hidden md:flex md:flex-col  min-h-screen left-slide  bg-opacity-95 transition-all duration-150   p-4 lg:p-0   w-full  bg-gray-800 lg:bg-transparent lg:h-100% md:h-auto  py-4 lg:w-full lg:col-span-2 ">
             <div className="user flex flex-col justify-center items-center ">
                
                {
@@ -101,7 +101,7 @@ function Navbar({isOpen}) {
 
         {
             isOpen?(
-                <div className={`z-50 fixed lg:hidden top-0 left-0 max-w-64 min-h-screen  left-slide  bg-opacity-95 transition-all duration-150   p-4  bg-gray-800 md:h-auto  py-4  `}>
+                <div className="z-50 fixed lg:hidden top-0 left-0 max-w-64 min-h-screen  left-slide  bg-opacity-95 transition-all duration-150   p-4  bg-gray-800 md:h-auto  py-4 ">
                 <div className="user flex flex-col justify-center items-center ">
                    
                    {
