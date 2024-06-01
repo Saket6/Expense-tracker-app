@@ -122,7 +122,7 @@ function Expenses({ params }) {
              <EditBudget budget={budget} getBudget={getBudget}/>
             </div>
           </div>
-          <div className='tr col-span-6 flex flex-col justify-start items-center border-1 rounded-lg bg-white dark:bg-gray-900  md:mx-10 '>
+          <div className='tr col-span-6 flex flex-col justify-start items-center border-1 rounded-lg bg-white dark:bg-slate-950  md:mx-10 '>
             <h1 className='text-xl font-bold md:mt-3 mb-1 md:mb-5 mt-10'> Create New Expense</h1>
             <div className='flex flex-col w-full py-5 md:p-5  ' >
               <div>

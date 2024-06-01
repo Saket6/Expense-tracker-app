@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { Progress } from "@/Components/ui/progress"
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import { CircleChevronRight } from 'lucide-react';
 
 function BudgetItem({ budget }) {
 
@@ -15,7 +17,7 @@ function BudgetItem({ budget }) {
         setExpense(sum);
     }, [budget])
     return (
-        <Link href={`/dashboard/expenses/${budget._doc._id}`} className='flex flex-col justify-between items-start px-2 py-3 md:p-5 hover:scale-105 transition-all duration-150 cursor-pointer bg-gray-100 dark:bg-slate-700 rounded-lg'>
+        <Link href={`/dashboard/expenses/${budget._doc._id}`} className='flex flex-col justify-between items-start px-2 py-3 md:p-5 hover:scale-105 transition-all duration-150 cursor-pointer bg-gray-100 dark:bg-gray-900 rounded-lg'>
             <div className='flex w-full mb-10 justify-between'>
                 <div className='flex justify-start  items-center'>
                   
@@ -29,8 +31,9 @@ function BudgetItem({ budget }) {
                   
                 </div>
 
-                <div className='flex items-center  text-base md:text-2xl text-green-400'>
+                <div className='flex  items-center  text-base md:text-2xl font-bold'>
                     ₹{budget._doc.amount}
+                     <CircleChevronRight className='ml-3 '/>
                 </div>
 
             </div>
