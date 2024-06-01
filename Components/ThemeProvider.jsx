@@ -1,12 +1,9 @@
 import React from 'react'
 import { ThemeProvider as NextThemeprovider } from 'next-themes'
 
-function ThemeProvider({ children }) {
+function ThemeProvider({ children , ...props }) {
     return (
-        <NextThemeprovider
-            attribute="class"
-            defaultTheme="dark"
-            disableTransitionOnChange
+        <NextThemeprovider {...props} // disableTransitionOnChange
         >
             {children}
         </NextThemeprovider>

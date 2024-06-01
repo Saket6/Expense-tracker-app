@@ -42,10 +42,10 @@ function Dashboard() {
           <>
             <div>
               {
-                user ? <><h1 className='text-2xl md:text-4xl font-bold text-white'>Hi, {user?.fullName} ✌️</h1>
+                user ? <><h1 className='text-2xl md:text-4xl font-bold'>Hi, {user?.fullName} ✌️</h1>
                   <h2 className='text-sm'>You can check your budgets here...</h2>
                 </> :
-                  <div className='h-[50px] p-5 bg-gray-800 animate-pulse'></div>
+                  <div className='h-[50px] p-5 bg-gray-300 rounded-lg dark:bg-gray-800 animate-pulse'></div>
               }
 
 

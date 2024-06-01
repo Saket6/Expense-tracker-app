@@ -66,7 +66,7 @@ function CreateBudget({getBudgetList}) {
                         </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
-                        <Button className='w-fit text-3xl' onClick={() => setEmojiOpen(!isEmojiOpen)} >{currEmoji}
+                        <Button className='w-fit bg-gray-300 hover:bg-gray-200  dark:hover:bg-gray-800 dark:bg-slate-800 text-3xl' onClick={() => setEmojiOpen(!isEmojiOpen)} >{currEmoji}
                         </Button>
 
                         <div className="grid grid-cols-4 items-center gap-4">

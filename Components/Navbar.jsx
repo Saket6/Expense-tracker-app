@@ -72,7 +72,7 @@ function Navbar({isOpen}) {
 
     return (
         <>
-         <div className="z-50 hidden md:block  min-h-screen left-slide  bg-opacity-95 transition-all duration-150   p-4 lg:p-0   bg-gray-800 lg:bg-transparent lg:h-100% md:h-auto  py-4 w-full lg:col-span-2">
+         <div className="border-r-2 lg:py-8 dark:border-gray-800 lg:sticky  max-w-64 top-0 left-0 hidden md:block  min-h-screen left-slide  bg-opacity-95 transition-all duration-150 lg:p-4 lg:bg-transparent lg:h-100% md:h-auto  w-full lg:col-span-2">
             <div className="user flex flex-col justify-center items-center ">
                
                {
@@ -83,13 +83,13 @@ function Navbar({isOpen}) {
 
                }
         
-                {/* <ThemeChanger appearance={userButtonAppearance}/> */}
+                <ThemeChanger appearance={userButtonAppearance}/>
             </div>
             <nav className='mt-4'>
                 <ul>
                     {NavItems.map((item, index) => (
                         <li key={index} className='w-full'>
-                            <Link href={item.link} className={`flex px-2 py-3 ${path === (item.link) && `bg-gray-700`} transition-all duration-100  rounded-lg mb-2 hover:bg-gray-700`}>
+                            <Link href={item.link} className={`flex px-2 py-3 ${path === (item.link) && `bg-gray-300  dark:bg-gray-700`} transition-all duration-100  rounded-lg mb-2  hover:bg-gray-300 dark:hover:bg-gray-700`}>
                                 <span className='mr-3'>{item.icon}</span>
                                 <span className='mr-3'>{item.name}</span>
                             </Link>
@@ -101,7 +101,7 @@ function Navbar({isOpen}) {
 
         {
             isOpen?(
-                <div className="z-50 fixed lg:hidden top-0 left-0 min-w-72 min-h-screen  left-slide  bg-opacity-95 transition-all duration-150   p-4  bg-gray-800 md:h-auto  py-4 ">
+                <div className="z-50 fixed lg:hidden top-0 left-0 min-w-64 min-h-screen  left-slide  bg-opacity-95 transition-all duration-150   p-4  bg-gray-300 dark:bg-gray-800 md:h-auto  py-4 ">
                 <div className="user flex flex-col justify-center items-center ">
                    
                    {
@@ -112,13 +112,13 @@ function Navbar({isOpen}) {
     
                    }
             
-                    {/* <ThemeChanger appearance={userButtonAppearance}/> */}
+                    <ThemeChanger appearance={userButtonAppearance}/>
                 </div>
                 <nav className='mt-4'>
                     <ul>
                         {NavItems.map((item, index) => (
                             <li key={index} className='w-full'>
-                                <Link href={item.link} className={`flex px-2 py-3 ${path === (item.link) && `bg-gray-700`} transition-all duration-100  rounded-lg mb-2 hover:bg-gray-700`}>
+                                <Link href={item.link} className={`flex px-2 py-3 ${path === (item.link) && `bg-gray-400 dark:bg-gray-700`} transition-all duration-100  rounded-lg mb-2 hover:bg-gray-400 dark:hover:bg-gray-700`}>
                                     <span className='mr-3'>{item.icon}</span>
                                     <span className='mr-3'>{item.name}</span>
                                 </Link>

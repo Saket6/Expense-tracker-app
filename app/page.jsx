@@ -12,7 +12,7 @@ const Router = useRouter()
     },[])
 
   return (
-    <div>HomePage</div>
+    <div></div>
   )
 }
 

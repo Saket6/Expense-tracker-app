@@ -37,7 +37,7 @@ function BudgetList() {
                 [1,2,3,4,5,6].map((x)=>
                 {
                   return(
-                    <div key={x} className='bg-slate-700 px-10 py-16 rounded-lg animate-pulse ' >
+                    <div key={x} className=' bg-gray-300 dark:bg-slate-700 px-10 py-16 rounded-lg animate-pulse ' >
                       
                     </div>
                   )

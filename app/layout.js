@@ -14,10 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
+      <html lang="en" suppressHydrationWarning  >
         <body className={outfit.className}>
-          <ThemeProvider>
-
+          <ThemeProvider
+           attribute="class"
+           themes={['dark' ,'light']}
+           defaultTheme="light"
+          >
             <Toaster />
             {children}
           </ThemeProvider>

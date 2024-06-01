@@ -29,7 +29,7 @@ function DashboardCards({ BudgetList }) {
             {
                 BudgetList?.length > 0 ?
                     <>
-                        <div className="flex justify-between items-center px-5 md:px-10 py-4  md:py-6 rounded-lg bg-gray-700 ">
+                        <div className="flex justify-between items-center px-5 md:px-10 py-4  md:py-6 rounded-lg bg-gray-300 dark:bg-gray-700 ">
                             <div>
                                 <h3 className='font-bold text-base md:text-lg'>Total Budget</h3>
                                 <h1 className='font-bold text-xl md:text-4xl'>₹ {totalBudget}</h1>
@@ -42,7 +42,7 @@ function DashboardCards({ BudgetList }) {
 
                         </div>
 
-                        <div className="flex justify-between items-center px-5 md:px-10 py-4 md:py-6 rounded-lg bg-gray-700 ">
+                        <div className="flex justify-between items-center px-5 md:px-10 py-4 md:py-6 rounded-lg bg-gray-300 dark:bg-gray-700 ">
                             <div>
                                 <h3 className='font-bold text-base md:text-lg'>Total Expenses</h3>
                                 <h1 className='font-bold text-xl md:text-4xl'>₹ {totalSpent}</h1>
@@ -55,7 +55,7 @@ function DashboardCards({ BudgetList }) {
 
                         </div>
 
-                        <div className="flex justify-between items-center px-5 md:px-10 py-4 md:py-6 rounded-lg bg-gray-700 ">
+                        <div className="flex justify-between items-center px-5 md:px-10 py-4 md:py-6 rounded-lg bg-gray-300 dark:bg-gray-700 ">
                             <div>
                                 <h3 className='font-bold text-base md:text-lg'>No. of Budgets</h3>
                                 <h1 className='font-bold text-xl md:text-4xl'>{BudgetList.length}</h1>
@@ -73,7 +73,7 @@ function DashboardCards({ BudgetList }) {
                         {
                             [1, 2, 3].map((item) =>
                             (
-                                <div className='px-4 py-6 h-[120px] rounded-lg animate-pulse bg-gray-800' key={item}></div>
+                                <div className='px-4 py-6 h-[120px] rounded-lg animate-pulse bg-gray-300 dark:bg-gray-800' key={item}></div>
 
                             )
                             )

@@ -90,8 +90,8 @@ function Expenses({ params }) {
         <div className="top grid grid-cols-1 md:grid-cols-12 ">
           <div className="tl col-span-6">
             {
-              budget ? <div className=''> <BudgetItem budget={budget} /> </div> : (
-                <div className='px-10 py-20 rounded-lg bg-gray-700 animate-pulse' >
+              budget ? <div className='mt-5 lg:mt-0'> <BudgetItem budget={budget} /> </div> : (
+                <div className='px-10 py-20 rounded-lg bg-gray-400 dark:bg-gray-700 animate-pulse' >
                 </div>
               )
             }
@@ -122,7 +122,7 @@ function Expenses({ params }) {
              <EditBudget budget={budget} getBudget={getBudget}/>
             </div>
           </div>
-          <div className='tr col-span-6 flex flex-col justify-start items-center border-1 rounded-lg bg-gray-900  md:mx-10 '>
+          <div className='tr col-span-6 flex flex-col justify-start items-center border-1 rounded-lg bg-white dark:bg-gray-900  md:mx-10 '>
             <h1 className='text-xl font-bold md:mt-3 mb-1 md:mb-5 mt-10'> Create New Expense</h1>
             <div className='flex flex-col w-full py-5 md:p-5  ' >
               <div>
