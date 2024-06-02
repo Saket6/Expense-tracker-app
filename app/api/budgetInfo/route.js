@@ -12,7 +12,7 @@ export async function POST(req)
         const id = data.id;
         const objectId = new mongoose.Types.ObjectId(id);
         const Budget = await NewBudget.find({_id: objectId});
-        const Expenses = await  Expense.find({ budgetId: objectId});
+        const Expenses = await  Expense.find({ budgetId: objectId}).sort({_id:-1});
         // const BudgetsWithExpenses = BudgetList.map(budget => ({
         //     ...budget,
         //     expense: ExpenseList.filter(expense => expense.budgetId.toString() === budget._id.toString())

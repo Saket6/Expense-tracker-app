@@ -11,7 +11,7 @@ export async function POST(req)
         const BudgetList = await NewBudget.find({createdBy:user.primaryEmailAddress.emailAddress});
         const BudgetIDs= BudgetList.map(budget => budget._id  );
 
-        const ExpenseList = await  Expense.find({ budgetId: {$in: BudgetIDs}});
+        const ExpenseList = await  Expense.find({ budgetId: {$in: BudgetIDs}}).sort({_id:-1});
         const ExpenseWithBudgetName = ExpenseList.map((expense) => {
             const matchingBudget = BudgetList.find(budget => budget._id.toString() === expense.budgetId.toString());
             return {
