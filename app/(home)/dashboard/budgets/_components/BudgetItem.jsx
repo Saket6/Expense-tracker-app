@@ -50,7 +50,7 @@ function BudgetItem({ budget }) {
                 <span className='md:text-base text-sm' >Spent: ₹ {expense}</span>
                 <span className='md:text-base text-sm'>Remaining: ₹{budget._doc.amount-expense}</span>
             </div>
-            <Progress color={`${expense/budget._doc.amount >= 0.9? 'red-600':'green-500' }  `}  value={((expense/budget._doc.amount))*100} />
+            <Progress color={`${expense/budget._doc.amount >= 0.9? 'red-600':'green-600' }  `}  value={((expense/budget._doc.amount))*100} />
             </div>
         </Link>
     )
