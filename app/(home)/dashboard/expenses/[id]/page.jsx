@@ -132,7 +132,7 @@ function Expenses({ params }) {
 
               <div>
                 <Label htmlFor='amount'  >Expense Amount</Label>
-                <Input id='amount' className='mt-2' placeholder="e.g.₹2000" onChange={(e) => { setAmount(e.target.value) }} />
+                <Input id='amount' type='Number' className='mt-2' placeholder="e.g.₹2000" onChange={(e) => { setAmount(e.target.value) }} />
               </div>
 
               <div className='mt-5'>
