@@ -117,7 +117,7 @@ function Dashboard() {
                 </>
 
               ) : (
-                <div className=' h-36 mt-16 rounded-lg w-96 animate-pulse dark:bg-slate-800 bg-gray-300'></div>
+                <div className=' h-36 mt-16 rounded-lg max-w-96 animate-pulse dark:bg-slate-800 bg-gray-300'></div>
               )
             }
 
