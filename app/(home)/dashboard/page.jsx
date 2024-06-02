@@ -109,7 +109,7 @@ function Dashboard() {
 
                 <>
                   <h1 className='text-xl mt-10 font-bold'>
-                    Continue where you left...
+                    Continue where you left off...
                   </h1>
                   <div className="max-w-96 mt-4">
                   <BudgetItem budget={latestExpense} />
