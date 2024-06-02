@@ -5,6 +5,7 @@ import { Progress } from "@/Components/ui/progress"
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { CircleChevronRight } from 'lucide-react';
+import { CircleAlert } from 'lucide-react';
 
 function BudgetItem({ budget }) {
 
@@ -32,7 +33,14 @@ function BudgetItem({ budget }) {
 
                 <div className='flex  items-center  text-base md:text-2xl font-bold'>
                     ₹{budget?._doc.amount}
-                     <CircleChevronRight className='ml-3 '/>
+                    {
+                        expense/budget._doc.amount >= 0.9?(
+                            <CircleAlert color='red'  className='ml-3 animate-pulse '/>
+                        ):(
+                        <CircleChevronRight className='ml-3 '/>
+                        )
+                    }
+                     
                 </div>
 
             </div>
@@ -42,7 +50,7 @@ function BudgetItem({ budget }) {
                 <span className='md:text-base text-sm' >Spent: ₹ {expense}</span>
                 <span className='md:text-base text-sm'>Remaining: ₹{budget._doc.amount-expense}</span>
             </div>
-            <Progress value={((expense/budget._doc.amount))*100} />
+            <Progress color={`${expense/budget._doc.amount >= 0.9? 'red-600':'green-500' }  `}  value={((expense/budget._doc.amount))*100} />
             </div>
         </Link>
     )

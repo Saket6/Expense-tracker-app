@@ -89,3 +89,11 @@
       transform: translateX(0%);
     }
   }
+
+  ::-webkit-scrollbar{
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: orangered;
+  }
