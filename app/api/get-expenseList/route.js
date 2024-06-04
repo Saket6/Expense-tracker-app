@@ -24,6 +24,7 @@ export async function POST(req)
 
           let Expenses=[];
           ExpenseWithBudgetName.forEach(expense=> Expenses.push(expense._doc));
+         
         return NextResponse.json({"message":'success', "data": Expenses});
     }
     catch(e){console.log(e);}

@@ -13,6 +13,10 @@ function Expenses() {
             const res=await axios.post('/api/get-expenseList',{user});
             const resp=res.data;
             console.log(resp);
+            resp.data.forEach((expense)=>
+                {
+                  expense.dateCreated = expense.dateCreated.split('T')[0];
+                })
             setExpenses(resp.data);
         }
         catch(e){console.log(e);}
@@ -22,6 +26,7 @@ function Expenses() {
     {
         user && getExpenses();
     },[user])
+
 
   return (
     <div className='md:p-5'>

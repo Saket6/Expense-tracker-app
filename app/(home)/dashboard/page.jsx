@@ -8,12 +8,14 @@ import BarchartDashboard from './_components/BarchartDashboard';
 import DashboardCards from './_components/DashboardCards';
 import Link from 'next/link';
 import { CircleChevronRight } from 'lucide-react';
+import MonthlyYearlyChart from './_components/MonthlyYearlyChart';
 import BudgetItem from './budgets/_components/BudgetItem';
 function Dashboard() {
 
   const { user } = useUser();
   const [BudgetList, setBudgetList] = useState();
   const [currUser, setCurrUser] = useState();
+  const [ExpenseList, setExpenseList] = useState();
   const [latestExpense, setLatestExpense] = useState();
 
   const getBudgetList = async () => {
@@ -21,7 +23,20 @@ function Dashboard() {
       const res = await axios.post('/api/getBudgetList', { user });
       const budgets = res.data;
       setBudgetList(budgets.data);
-      console.log(budgets.data);
+      console.log("Budgets on dashboard: ", budgets.data);
+    }
+    catch (e) { console.log(e); }
+  }
+
+  const getExpensesList = async () => {
+    try {
+      const res = await axios.post('/api/get-expenseList', { user });
+      const resp = res.data;
+      console.log("Expense List", resp.data);
+      resp.data.forEach((expense) => {
+        expense.dateCreated = expense.dateCreated.split('T')[0];
+      })
+      setExpenseList(resp.data);
     }
     catch (e) { console.log(e); }
   }
@@ -33,6 +48,7 @@ function Dashboard() {
 
   useEffect(() => {
     getBudgetList();
+    getExpensesList();
   }, [currUser])
 
 
@@ -108,12 +124,18 @@ function Dashboard() {
                 // </div>
 
                 <>
-                  <h1 className='text-xl mt-10 font-bold'>
-                    Continue where you left off...
-                  </h1>
-                  <div className="max-w-96 mt-4">
-                  <BudgetItem budget={latestExpense} />
-                  </div>
+                  {
+                    latestExpense.length === 0 ? ("") :
+                      <>
+                        <h1 className='text-xl mt-10 font-bold'>
+                          Continue where you left off...
+                        </h1>
+                        <div className="max-w-96 mt-4">
+                          <BudgetItem budget={latestExpense} />
+                        </div>
+                      </>
+                  }
+
                 </>
 
               ) : (
@@ -126,7 +148,8 @@ function Dashboard() {
               <BarchartDashboard BudgetList={BudgetList} />
             </div>
             <div className="other">
-
+              <h1 className='text-xl mt-10 font-bold'>History</h1>
+              <MonthlyYearlyChart expenseList={ExpenseList} />
             </div>
           </>
         ) : (

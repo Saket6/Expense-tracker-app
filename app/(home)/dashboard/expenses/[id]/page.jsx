@@ -10,6 +10,7 @@ import TableContainer from './_components/TableContainer';
 import { useToast } from '@/Components/ui/use-toast';
 import { Trash2 } from 'lucide-react';
 import EditBudget from './_components/EditBudget';
+import { Calendar } from '@/Components/ui/calendar';
 import { SquarePen } from 'lucide-react';
 import {
   AlertDialog,
@@ -23,6 +24,7 @@ import {
   AlertDialogTrigger,
 } from "@/Components/ui/alert-dialog"
 import { useRouter } from 'next/navigation';
+import { DatePickerDemo } from '@/Components/DatePicker';
 function Expenses({ params }) {
 
   const { id } = params;
@@ -31,6 +33,7 @@ function Expenses({ params }) {
   const [budget, setBudget] = useState()
   const Router = useRouter();
   const [expenseName, setName] = useState("");
+  const [date,setDate] = useState(new Date(Date.now()));
   const [expenseAmount, setAmount] = useState();
 
   const getBudget = async () => {
@@ -40,8 +43,9 @@ function Expenses({ params }) {
         id: params
       });
       const budgets = res.data;
+      budgets.data[0].expense.forEach((expense)=>expense.dateCreated = expense.dateCreated.split('T')[0]);
       setBudget(budgets.data[0]);
-      console.log(budgets.data);
+      console.log("this is data",budgets.data);
     }
     catch (e) { console.log(e); }
   }
@@ -55,6 +59,7 @@ function Expenses({ params }) {
         name: expenseName,
         amount: expenseAmount,
         budgetId: budget._doc._id,
+        dateCreated: date
       })
 
       // console.log(res.data);
@@ -130,10 +135,16 @@ function Expenses({ params }) {
                 <Input id='name' className='mt-2' placeholder="e.g.Decoration" onChange={(e) => { setName(e.target.value) }} />
               </div>
 
-              <div>
+              <div className='mt-3'>
                 <Label htmlFor='amount'  >Expense Amount</Label>
                 <Input id='amount' type='Number' className='mt-2' placeholder="e.g.₹2000" onChange={(e) => { setAmount(e.target.value) }} />
               </div>
+
+              <div className='mt-3'>
+                <Label htmlFor='date' className='mr-3'  >Date:</Label>
+                <Input type='date' id='date' onChange={(e)=>setDate(e.target.value)}></Input>
+               {/* <DatePickerDemo date={date} setDate={setDate}/> */}
+              </div >
 
               <div className='mt-5'>
                 <Button className='w-full' disabled={!(expenseName && expenseAmount)} onClick={submitExpense} >Create new Expense</Button>

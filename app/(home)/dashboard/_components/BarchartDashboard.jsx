@@ -22,13 +22,13 @@ function BarchartDashboard({ BudgetList }) {
         });
 
         setData(transformedBudget);
-        console.log(transformedBudget);
+        // console.log(transformedBudget);
 
     }, [BudgetList])
 
     useEffect(()=>
     {
-        console.log("Transformed Data", transformedData);
+        // console.log("Transformed Data", transformedData);
     },[transformedData])
 
     return (
@@ -55,7 +55,6 @@ function BarchartDashboard({ BudgetList }) {
                         <Bar dataKey="totalExpense" stackId="a" fill="#FF7D29" />
                         <Bar dataKey="amount" stackId="a" fill="#C3C2FF" />
                     </BarChart>
-              
                 
 
             }
