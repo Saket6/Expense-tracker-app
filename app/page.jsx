@@ -6,11 +6,6 @@ import React from 'react'
 function HomePage() {
 const Router = useRouter()
 
-    useEffect(()=>
-    {
-        Router.push('/dashboard');
-    },[])
-
   return (
     <div></div>
   )
