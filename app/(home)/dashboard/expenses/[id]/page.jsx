@@ -33,7 +33,7 @@ function Expenses({ params }) {
   const [budget, setBudget] = useState()
   const Router = useRouter();
   const [expenseName, setName] = useState("");
-  const [date,setDate] = useState(new Date(Date.now()));
+  const [date,setDate] = useState(new Date());
   const [expenseAmount, setAmount] = useState();
 
   const getBudget = async () => {
@@ -142,7 +142,7 @@ function Expenses({ params }) {
 
               <div className='mt-3'>
                 <Label htmlFor='date' className='mr-3'  >Date:</Label>
-                <Input type='date' id='date' onChange={(e)=>setDate(e.target.value)}></Input>
+                <Input type='date' id='date' value={date}  placeholder={date} onChange={(e)=>setDate(e.target.value)}></Input>
                {/* <DatePickerDemo date={date} setDate={setDate}/> */}
               </div >
 

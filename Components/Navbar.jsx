@@ -101,7 +101,7 @@ function Navbar({isOpen}) {
 
         {
             isOpen?(
-                <div className="z-50 fixed lg:hidden top-0 left-0 min-w-64 min-h-screen  left-slide  bg-opacity-95 transition-all duration-150   p-4  bg-gray-300 dark:bg-gray-800 md:h-auto  py-4 ">
+                <div className="z-50 fixed lg:hidden top-0 left-0 min-w-64 min-h-screen  left-slide  dark:bg-opacity-95 bg-opacity-95 transition-all duration-150   p-4  bg-gray-300 dark:bg-gray-950 md:h-auto  py-4 ">
                 <div className="user flex flex-col justify-center items-center ">
                    
                    {
@@ -118,7 +118,7 @@ function Navbar({isOpen}) {
                     <ul>
                         {NavItems.map((item, index) => (
                             <li key={index} className='w-full'>
-                                <Link href={item.link} className={`flex px-2 py-3 ${path === (item.link) && `bg-gray-400 dark:bg-gray-700`} transition-all duration-100  rounded-lg mb-2 hover:bg-gray-400 dark:hover:bg-gray-700`}>
+                                <Link href={item.link} className={`flex px-2 py-3 ${path === (item.link) && `bg-gray-400 dark:bg-gray-900`} transition-all duration-100  rounded-lg mb-2 hover:bg-gray-400 dark:hover:bg-gray-900`}>
                                     <span className='mr-3'>{item.icon}</span>
                                     <span className='mr-3'>{item.name}</span>
                                 </Link>
