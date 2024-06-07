@@ -17,6 +17,7 @@ function Dashboard() {
   const [currUser, setCurrUser] = useState();
   const [ExpenseList, setExpenseList] = useState();
   const [latestExpense, setLatestExpense] = useState();
+  const [IncomeCategories, setIncomeCategories] = useState();
 
   const getBudgetList = async () => {
     try {
@@ -24,6 +25,16 @@ function Dashboard() {
       const budgets = res.data;
       setBudgetList(budgets.data);
       console.log("Budgets on dashboard: ", budgets.data);
+    }
+    catch (e) { console.log(e); }
+  }
+
+  const getIncomeList = async () => {
+    try {
+      const res = await axios.post('/api/get-IncomeCategories', { user });
+      const Categories = res.data;
+      setIncomeCategories(Categories.data);
+      console.log("Categories on Dashboard: ", Categories.data);
     }
     catch (e) { console.log(e); }
   }
@@ -49,6 +60,7 @@ function Dashboard() {
   useEffect(() => {
     getBudgetList();
     getExpensesList();
+    getIncomeList();
   }, [currUser])
 
 
@@ -87,7 +99,7 @@ function Dashboard() {
             </div>
             {
               <div className=''>
-                <DashboardCards BudgetList={BudgetList} />
+                <DashboardCards BudgetList={BudgetList} IncomeCategories = {IncomeCategories} />
               </div>
             }
             {

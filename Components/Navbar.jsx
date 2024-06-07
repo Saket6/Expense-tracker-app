@@ -41,12 +41,12 @@ function Navbar({isOpen}) {
             link: '/dashboard/expenses',
             icon: <Receipt />,
         },
-        // {
-        //     name: 'Incomes',
-        //     link: '/dashboard/incomes',
-        //     icon: <IndianRupee />,
+        {
+            name: 'Incomes',
+            link: '/dashboard/incomes',
+            icon: <IndianRupee />,
 
-        // },
+        },
        
         {
             name: 'About',

@@ -27,7 +27,7 @@ import { useRouter } from 'next/navigation';
 import { DatePickerDemo } from '@/Components/DatePicker';
 function Expenses({ params }) {
 
-  const { id } = params;
+  // const { id } = params;
   const { toast } = useToast()
   const { user } = useUser();
   const [budget, setBudget] = useState()
