@@ -36,7 +36,7 @@ export function DataTable({
         if(flag==='all')
             setPageSize(8);
     },[flag])
-
+    
     const table = useReactTable({
         data,
         columns,

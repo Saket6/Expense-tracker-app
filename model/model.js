@@ -48,3 +48,54 @@ const ExpenseSchema= new mongoose.Schema({
 })
 
 export const Expense = mongoose.models.Expenses || mongoose.model("Expenses", ExpenseSchema);
+
+const IncomeCategorySchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    amount:{
+        type: Number,
+        default: 0
+    },
+    icon:{
+        type: String,
+        required: true
+    },
+    createdBy:{
+        type: String,
+        required: true
+    },
+    dateCreated: {
+        type: Date,
+        default: Date.now()
+    }
+})
+
+export const IncomeCategory = mongoose.models.IncomeCategory || mongoose.model("IncomeCategory", IncomeCategorySchema);
+
+
+
+const IncomeSchema= new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
+    CategoryId:{
+        type : mongoose.Schema.Types.ObjectId,
+        ref: "IncomeCategory",
+        required: true
+    }, 
+    dateCreated: {
+        type: Date,
+        default: Date.now()
+    }
+})
+
+export const Income = mongoose.models.Incomes || mongoose.model("Incomes", IncomeSchema);
+
+
