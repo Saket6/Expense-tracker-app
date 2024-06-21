@@ -51,7 +51,7 @@ function CreateIncome({ refresh }) {
                 <DialogTrigger asChild>
                     <Button>Create Category</Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px] dark:bg-black border-2 dark:border-gray-900">
+                <DialogContent className="max-w-[90vw] lg:max-w-[30vw]  dark:bg-black border-2 dark:border-gray-900">
                     <DialogHeader>
                         <DialogTitle>New Income</DialogTitle>
                         <DialogDescription>

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { Button } from "@/Components/ui/button"
 import { useState } from 'react'
 import EmojiPicker from 'emoji-picker-react'
+import { CirclePlus } from 'lucide-react';
 import axios from 'axios'
 import {
     Dialog,
@@ -53,12 +54,13 @@ function CreateBudget({getBudgetList}) {
         <div className='mt-5'>
             <Dialog>
                 <DialogTrigger asChild>
-                    <div className=' cursor-pointer px-3 py-2 md:p-3 bg-orange-600 w-fit flex  justify-center items-center rounded-full' >
-                        <span className=' font-bold text-xl md:text-4xl mr-3'>+</span>
-                        <h3 className='font-bold text-sm md:text-lg'>Create New Budget</h3>
+                    <div className=' cursor-pointer px-3 py-2 md:py-3 md:px-3 transition-all duration-150 hover:bg-orange-500 bg-neutral-800 text-white dark:text-white dark:bg-orange-600 w-fit flex  justify-center items-center rounded-full' >
+                        {/* <span className=' font-bold text-xl md:text-3xl mr-3'>+</span> */}
+                        <h3 className='font-bold text-sm md:text-base'>New Budget</h3>
+                        <CirclePlus className='ml-1'/>
                     </div>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px]">
+                <DialogContent  className="max-w-[90vw] lg:max-w-max   dark:bg-black border-2 dark:border-gray-900">
                     <DialogHeader>
                         <DialogTitle>New Budget</DialogTitle>
                         <DialogDescription>
@@ -66,7 +68,7 @@ function CreateBudget({getBudgetList}) {
                         </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
-                        <Button className='w-fit bg-gray-300 hover:bg-gray-200  dark:hover:bg-gray-800 dark:bg-slate-800 text-3xl' onClick={() => setEmojiOpen(!isEmojiOpen)} >{currEmoji}
+                        <Button className='w-min h-max bg-gray-300 hover:bg-gray-200   dark:hover:bg-gray-800 dark:bg-slate-800 text-3xl' onClick={() => setEmojiOpen(!isEmojiOpen)} >{currEmoji}
                         </Button>
 
                         <div className="grid grid-cols-4 items-center gap-4">
@@ -76,7 +78,7 @@ function CreateBudget({getBudgetList}) {
                             <Input
                                 id="name"
                                 placeholder="e.g. Grocery or Shopping"
-                                className="col-span-3"
+                                className="col-span-3 bg-transparent"
                                 onChange={(e) => setBudgetName(e.target.value)}
                             />
                         </div>
@@ -91,7 +93,7 @@ function CreateBudget({getBudgetList}) {
                                 id="amount"
                                 type="Number"
                                 placeholder="e.g. ₹1000"
-                                className="col-span-3"
+                                className="col-span-3 bg-transparent"
                                 onChange={(e) => setAmount(e.target.value)}
                             />
                         </div>

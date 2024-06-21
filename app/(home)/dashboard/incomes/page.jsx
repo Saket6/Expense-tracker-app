@@ -16,7 +16,7 @@ import CreateIncome from './_components/CreateIncome'
 import CategoryList from './_components/CategoryList'
 function Incomes() {
   return (
-    <div className=' p-0 md:mt-0 mt-10 md:p-6  rounded-xl'>
+    <div className=' p-0 md:mt-0 md:p-6  rounded-xl'>
       <CategoryList/>
     </div>
   )
