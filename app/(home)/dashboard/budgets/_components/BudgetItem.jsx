@@ -18,7 +18,7 @@ function BudgetItem({ budget }) {
         setExpense(sum);
     }, [budget])
     return (
-        <Link href={`/dashboard/expenses/${budget?._doc._id}`} className='flex flex-col justify-between items-start px-2 py-3 md:p-5 hover:scale-105 transition-all duration-150 cursor-pointer bg-gray-100 dark:bg-gray-900 rounded-lg'>
+        <Link href={`/dashboard/expenses/${budget?._doc._id}`} className=' border-2 border-gray-200 dark:border-gray-800 flex flex-col justify-between items-start px-2 py-3 md:p-5 hover:scale-105 transition-all duration-150 cursor-pointer bg-gray-100 dark:bg-gray-900 rounded-lg'>
             <div className='flex w-full mb-10 justify-between'>
                 <div className='flex justify-start  items-center'>
                         <h1 className=' text-4xl bg-white mr-2 rounded-full flex justify-center items-center min-w-[50px]  min-h-[50px] '>{budget._doc.icon}</h1>

@@ -31,10 +31,10 @@ function Layout({ children }) {
             </div>
               
                 {/* <div className='p-7 flex justify-end lg:hidden z-10 bg-gray-900 w-full  sticky top-0 right-0 '> */}
-                    <div className=' z-50  lg:hidden fixed top-5 right-5 p-2 md:p-0 bg-gray-300 dark:bg-gray-700 rounded-lg transitin-all duration-100 hover:bg-gray-200 dark:hover:bg-gray-600'>
+                    <div className=' z-50  lg:hidden fixed top-5 right-5 p-2 md:p-0 bg-gray-300 dark:bg-gray-800 rounded-sm transitin-all duration-100 hover:bg-gray-200 dark:hover:bg-gray-600'>
                         {
-                            !isNavbar?<Menu className=' block z-30' size="30px" onClick={() => setNavbar(!isNavbar)} />:
-                            <X className=' block z-30' size="30px" onClick={() => setNavbar(!isNavbar)}   />
+                            !isNavbar?<Menu className=' block z-30' size="20px" onClick={() => setNavbar(!isNavbar)} />:
+                            <X className=' block z-30' size="20px" onClick={() => setNavbar(!isNavbar)}   />
                         }
                         
                     </div>
